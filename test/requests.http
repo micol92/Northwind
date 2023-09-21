@@ -64,7 +64,7 @@ Authorization: Basic alice:
 {
   "ID": "0",
   "owner": "A1",
-  "Products_ID": 0
+  "products_ID": 0
 }
 
 

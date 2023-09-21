@@ -4,7 +4,7 @@ service CatalogService {
     entity Orders {
         key ID      : String(5);
         owner       : String(100);
-        ProductsX    : Association to Products;
+        products    : Association to Products;
     }
 
     @readonly
