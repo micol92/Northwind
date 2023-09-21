@@ -1,0 +1,3055 @@
+{
+ "meta": {
+  "creator": "cds-dk 7.0.2"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "OP_API_WORK_CENTERS_0001": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.message.scope.supported": "true",
+   "@sap.supported.formats": "atom json xlsx"
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterAllCapacity": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Assignment",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityCategoryAllocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Allocation",
+     "@sap.quickinfo": "Capacity Category Allocation",
+     "notNull": true
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "WorkCenterDesc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Work Center Text"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenterResponsible": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Responsible",
+     "@sap.quickinfo": "Person Responsible for the Work Center"
+    },
+    "SupplyArea": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Prodn Supply Area",
+     "@sap.quickinfo": "Production Supply Area"
+    },
+    "WorkCenterUsage": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Usage",
+     "@sap.quickinfo": "Work Center Usage in Bill of Operations"
+    },
+    "WorkCenterResponsibleName": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Name of Responsible",
+     "@sap.quickinfo": "Work Center Responsible Name"
+    },
+    "CapacityCategoryCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity Category"
+    },
+    "to_WorkCenterInterval": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityInterval",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterQueuingOp": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPplineOp",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterTodayOp": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapDayOp",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterAllCapacity_2": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Assignment Version 2",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "CapacityCategoryAllocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Allocation",
+     "@sap.quickinfo": "Capacity Category Allocation",
+     "notNull": true
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "CapacityInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID"
+    },
+    "SetupCapRequirementFormula": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Setup Formula",
+     "@sap.quickinfo": "Formula for Setup Capacity Requirements"
+    },
+    "ProcgCapRequirementFormula": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Processing Formula",
+     "@sap.quickinfo": "Formula for Processing Capacity Requirements"
+    },
+    "TeardownCapRequirementFormula": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Teardown Formula",
+     "@sap.quickinfo": "Formula for Teardown Capacity Requirements"
+    },
+    "OtherCapRequirementFormula": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Other Formula",
+     "@sap.quickinfo": "Formula for Other Capacity Requirements"
+    },
+    "WorkCenterLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Date and Time of Last Change"
+    },
+    "to_Capacity": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacity",
+     "keys": []
+    },
+    "to_WorkCenterQueuingOp": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPplineOp",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterTodayOp": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapDayOp",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacity": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Header",
+   "elements": {
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "Capacity": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity",
+     "@sap.quickinfo": "Capacity name"
+    },
+    "CapacityCategoryCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity Category"
+    },
+    "CapacityActiveVersion": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Active Version",
+     "@sap.quickinfo": "Active Version of Available Capacity"
+    },
+    "CapacityIsFinite": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Finite Scheduling",
+     "@sap.quickinfo": "Indicator: Capacity Relevant to Finite Scheduling"
+    },
+    "CapacityIsPooled": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Pooled Capacity",
+     "@sap.quickinfo": "Pooled Capacity Indicator"
+    },
+    "CapacityHasIndivCapacities": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Individ. Capacities",
+     "@sap.quickinfo": "Has Individual Capacities"
+    },
+    "CapacityIsExcldFrmLongTermPlng": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "No LongTerm Planning",
+     "@sap.quickinfo": "Indicator: Capacity Excluded From Long-Term Planning"
+    },
+    "CapacityNumberOfCapacities": {
+     "type": "cds.Integer",
+     "@sap.label": "No. Ind. Capacities",
+     "@sap.quickinfo": "Number of Individual Capacities"
+    },
+    "CapacityResponsiblePlanner": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity Planner",
+     "@sap.quickinfo": "Capacity Responsible Planner Group"
+    },
+    "CapacityPlanUtilizationPercent": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Utilization",
+     "@sap.quickinfo": "Capacity Utilization Ratio in Percent"
+    },
+    "CapacityBreakDuration": {
+     "type": "cds.Integer",
+     "@sap.label": "Break Duration",
+     "@sap.quickinfo": "Cumulative Break Duration in Seconds (internal)"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "FactoryCalendar": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Factory Calendar",
+     "@sap.quickinfo": "Factory Calendar ID"
+    },
+    "AuthorizationGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Authorization",
+     "@sap.quickinfo": "Authorization Group"
+    },
+    "ShiftGroup": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Shift Grouping",
+     "@sap.quickinfo": "Grouping for Shift Definitions and Shift Sequences"
+    },
+    "CapacityStartTime": {
+     "type": "cds.Integer",
+     "@sap.label": "Start Time",
+     "@sap.quickinfo": "Start time in seconds (internal)"
+    },
+    "CapacityEndTime": {
+     "type": "cds.Integer",
+     "@sap.label": "End Time",
+     "@sap.quickinfo": "End Time in Seconds (internal)"
+    },
+    "CapIsUsedInMultiOperations": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Can Be Used By Several Operations",
+     "@sap.quickinfo": "Indicator: Several Operations Can Use Capacity"
+    },
+    "ReferencedCapacityInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Referenced Capacity ID"
+    },
+    "CapOverloadThresholdInPercent": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Overload (%)",
+     "@sap.quickinfo": "Overload"
+    },
+    "CapacityQuantityUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Capacity Unit",
+     "@sap.quickinfo": "Capacity Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "CapacityBaseQtyUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Capacity Base Unit",
+     "@sap.quickinfo": "Capacity Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "CapacityLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Capacity Last Change Date Time"
+    },
+    "to_CapacityInterval": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityInterval_2",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_CapacityText": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityText",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityInterval": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Interval",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "CapacityCategoryAllocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Allocation",
+     "@sap.quickinfo": "Capacity Category Allocation",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityActiveVersion": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "notNull": true
+    },
+    "IntervalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "IntervalStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "WorkDayRule": {
+     "type": "cds.String",
+     "length": 1
+    },
+    "AvailableCapacityIntervalDurn": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Interval Duration",
+     "@sap.quickinfo": "Duration of an Available Capacity Interval"
+    },
+    "ShiftSequence": {
+     "type": "cds.String",
+     "length": 4
+    },
+    "StdAvailableCapacityIsValid": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity is Valid",
+     "@sap.quickinfo": "Ind.: Standard Available Capacity is Valid for this Interval"
+    },
+    "to_WorkCenterShift": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityShift",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityInterval_2": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Interval Version 2",
+   "elements": {
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityActiveVersion": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "notNull": true
+    },
+    "IntervalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "IntervalStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Valid From",
+     "@sap.quickinfo": "Valid-From Date"
+    },
+    "StdAvailableCapacityIsValid": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity is Valid",
+     "@sap.quickinfo": "Ind.: Standard Available Capacity is Valid for this Interval"
+    },
+    "AvailableCapacityIntervalDurn": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Interval Duration",
+     "@sap.quickinfo": "Duration of an Available Capacity Interval"
+    },
+    "ShiftSequence": {
+     "type": "cds.String",
+     "length": 4
+    },
+    "WorkDayRule": {
+     "type": "cds.String",
+     "length": 1
+    },
+    "CapacityNumberOfShifts": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative"
+    },
+    "CapacityNumberOfCapacities": {
+     "type": "cds.Integer",
+     "@sap.label": "No. Ind. Capacities",
+     "@sap.quickinfo": "Number of Individual Capacities"
+    },
+    "CapacityPlanUtilizationPercent": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Utilization",
+     "@sap.quickinfo": "Capacity Utilization Ratio in Percent"
+    },
+    "CapacityLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Capacity Last Change Date Time"
+    },
+    "to_CapacityShift": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityShift_2",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityShift": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Shift",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "CapacityCategoryAllocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Work center cap. no.",
+     "@sap.quickinfo": "Capacity allocation number",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityActiveVersion": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "notNull": true
+    },
+    "IntervalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "WeekDay": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "notNull": true
+    },
+    "AvailableCapacityShift": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "notNull": true
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "IntervalStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ShiftName": {
+     "type": "cds.String",
+     "length": 4
+    },
+    "ShiftDefValidityStart": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ShiftDefValidityEnd": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ShiftStartTime": {
+     "type": "cds.Time"
+    },
+    "ShiftEndTime": {
+     "type": "cds.Time"
+    },
+    "CapacityBreakDuration": {
+     "type": "cds.Integer"
+    },
+    "CapacityPlanUtilizationPercent": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative"
+    },
+    "CapacityNumberOfCapacities": {
+     "type": "cds.Integer"
+    },
+    "TotOperatingDurationInHours": {
+     "type": "cds.Decimal",
+     "precision": 17,
+     "scale": 3,
+     "@sap.unit": "TotOperationDurationUnit",
+     "@sap.label": "dec17_3",
+     "@sap.quickinfo": "Decimal 17_3"
+    },
+    "TotOperationDurationUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityShift_2": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Shift Version 2",
+   "elements": {
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityActiveVersion": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "notNull": true
+    },
+    "IntervalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Valid to",
+     "@sap.quickinfo": "Valid-to date",
+     "notNull": true
+    },
+    "WeekDay": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Week Day",
+     "notNull": true
+    },
+    "AvailableCapacityShift": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Shift",
+     "@sap.quickinfo": "Shift Number of an Available Capacity",
+     "notNull": true
+    },
+    "IntervalStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Valid From",
+     "@sap.quickinfo": "Valid-From Date"
+    },
+    "WorkDayRule": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Workday Rule",
+     "@sap.quickinfo": "Workday Rule Code"
+    },
+    "ShiftDefinition": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Shift Definition"
+    },
+    "ShiftStartTime": {
+     "type": "cds.Time",
+     "@sap.label": "Start Time"
+    },
+    "ShiftEndTime": {
+     "type": "cds.Time",
+     "@sap.label": "End Time"
+    },
+    "ShiftDefValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Start Date"
+    },
+    "ShiftDefValidityEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "End Date"
+    },
+    "CapacityNumberOfCapacities": {
+     "type": "cds.Integer",
+     "@sap.label": "No. Ind. Capacities",
+     "@sap.quickinfo": "Number of Individual Capacities"
+    },
+    "CapacityPlanUtilizationPercent": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Utilization",
+     "@sap.quickinfo": "Capacity Utilization Ratio in Percent"
+    },
+    "CapacityBreakDuration": {
+     "type": "cds.Integer",
+     "@sap.label": "Break Duration",
+     "@sap.quickinfo": "Cumulative Break Duration in Seconds (internal)"
+    },
+    "OperatingDurationInSeconds": {
+     "type": "cds.Integer",
+     "@sap.label": "Operating Duration",
+     "@sap.quickinfo": "Operating Duration in Seconds"
+    },
+    "TotOperatingDurationInSeconds": {
+     "type": "cds.Integer",
+     "@sap.label": "Total Operating Duration In Seconds"
+    },
+    "CapacityLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Capacity Last Change Date Time"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacityText": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Description",
+   "elements": {
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "Language": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.label": "Language Key",
+     "notNull": true
+    },
+    "CapacityText": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Capacity Text",
+     "@sap.quickinfo": "Capacity Short Text"
+    },
+    "CapacityLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Capacity Last Change Date Time"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapDayOp": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Daily Operations Capacity",
+   "elements": {
+    "Plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant",
+     "notNull": true
+    },
+    "MRPController": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MRP controller",
+     "@sap.quickinfo": "MRP controller for the order",
+     "notNull": true
+    },
+    "WorkCenter": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityRequirement": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Requirement",
+     "@sap.quickinfo": "ID of the Capacity Requirements Record",
+     "notNull": true
+    },
+    "Material": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number for Order",
+     "notNull": true
+    },
+    "OrderID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "notNull": true
+    },
+    "Operation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Activity",
+     "@sap.quickinfo": "Operation/Activity Number",
+     "notNull": true
+    },
+    "WorkCenterDesc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Work Center Text"
+    },
+    "WorkCenterResponsible": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Responsible",
+     "@sap.quickinfo": "Person Responsible for the Work Center"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenterInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource"
+    },
+    "CapacityRequirementOrigin": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity Requirement Origin"
+    },
+    "CapacityRequirementUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Capacity Unit",
+     "@sap.quickinfo": "Unit of Measure for Capacity Requirements",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "OrderType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Order Type"
+    },
+    "OrderTypeName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Type Name",
+     "@sap.quickinfo": "Planned Order Type Name"
+    },
+    "OrderPlannedTotalQty": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "BaseUnit",
+     "@sap.label": "Total Order Quantity"
+    },
+    "BaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ProductionVersion": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Production Version"
+    },
+    "OperationPlanningStatusText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "OperationPlanningStatusCode": {
+     "type": "cds.String",
+     "length": 4
+    },
+    "OperationLatestStartDate": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OperationLatestStartTime": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OperationLatestEndDate": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OperationLatestEndTime": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OrderStatusText": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Status",
+     "@sap.quickinfo": "Individual Status of an Object"
+    },
+    "OrderStatusCode": {
+     "type": "cds.String",
+     "length": 5
+    },
+    "OrderFirmingStatusText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "OpLtstSchedldProcgStrtDte": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OpLtstSchedldProcgStrtTme": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OpLtstSchedldTrdwnStrtDte": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OpLtstSchedldTrdwnStrtTme": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "RemainingCapReqOpSegSetupDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "RemainingCapReqOpSegProcgDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "RemainingCapReqOpSegTrdwnDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "CapacityRequirementsAreDtmnd": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "OrderInternalID": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Internal ID"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapOrderPerBucketSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Operation Load Distribution",
+   "elements": {
+    "P_CapEvalStartDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Date",
+     "notNull": true
+    },
+    "P_CapEvalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Date",
+     "notNull": true
+    },
+    "P_CapEvalBucketType": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Single-Character Flag",
+     "notNull": true
+    },
+    "Plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant",
+     "notNull": true
+    },
+    "MRPController": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MRP controller",
+     "@sap.quickinfo": "MRP controller for the order",
+     "notNull": true
+    },
+    "WorkCenter": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "CapacityCategoryAllocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Allocation",
+     "@sap.quickinfo": "Capacity Category Allocation",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "Material": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number",
+     "notNull": true
+    },
+    "OrderID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "notNull": true
+    },
+    "Operation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Activity",
+     "@sap.quickinfo": "Operation/Activity Number",
+     "notNull": true
+    },
+    "CapacityEvaluationTimePeriod": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "ShiftName": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Shift Definition",
+     "notNull": true
+    },
+    "CapEvalBucketType": {
+     "type": "cds.String",
+     "length": 1
+    },
+    "CapacityEvaluationTimePerdText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "FactoryCalendar": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Factory Calendar",
+     "@sap.quickinfo": "Factory Calendar ID"
+    },
+    "WorkCenterDesc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Work Center Text"
+    },
+    "WorkCenterResponsible": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Responsible",
+     "@sap.quickinfo": "Person Responsible for the Work Center"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenterInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource"
+    },
+    "CapacityRequirementOrigin": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity Requirement Origin"
+    },
+    "CapacityRequirementUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Capacity Unit",
+     "@sap.quickinfo": "Unit of Measure for Capacity Requirements",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "OrderType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Order Type"
+    },
+    "OrderTypeName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Type Name",
+     "@sap.quickinfo": "Planned Order Type Name"
+    },
+    "OrderPlannedTotalQty": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "BaseUnit",
+     "@sap.label": "Total Order Quantity"
+    },
+    "BaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "OrderCategory": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Order Category"
+    },
+    "OrderCategoryName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Category Name",
+     "@sap.quickinfo": "Planned Order Category Name"
+    },
+    "ProductionVersion": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Production Version"
+    },
+    "OperationPlanningStatusText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "OperationPlanningStatusCode": {
+     "type": "cds.String",
+     "length": 4
+    },
+    "OperationLatestStartDate": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OperationLatestStartTime": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OperationLatestEndDate": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OperationLatestEndTime": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OrderStatusText": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Status",
+     "@sap.quickinfo": "Individual Status of an Object"
+    },
+    "OrderStatusCode": {
+     "type": "cds.String",
+     "length": 5
+    },
+    "OrderFirmingStatusCode": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Single-Character Flag",
+     "@sap.heading": ""
+    },
+    "OrderFirmingStatusText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "OpLtstSchedldProcgStrtDte": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OpLtstSchedldProcgStrtTme": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OpLtstSchedldTrdwnStrtDte": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OpLtstSchedldTrdwnStrtTme": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "RemainingCapReqOpSegSetupDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "RemainingCapReqOpSegProcgDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "RemainingCapReqOpSegTrdwnDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "OrderInternalID": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Internal ID"
+    },
+    "CapacityStartTime": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "CapacityEndTime": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "WorkCenterAvailableCapacity": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "WorkCenterCapacityUnit"
+    },
+    "WorkCenterCapRqmtInCapUnit": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "WorkCenterCapacityUnit"
+    },
+    "WorkCenterCapacityUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterCapUnitText": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.label": "Measuremt unit text",
+     "@sap.quickinfo": "Unit of Measurement Text (Maximum 10 Characters)"
+    },
+    "Parameters": {
+     "@sap.filterable": "false",
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapOrderPerBucket",
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapOrderPerBucket": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "parameters",
+   "elements": {
+    "P_CapEvalStartDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.parameter": "mandatory",
+     "@sap.label": "Date",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "P_CapEvalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.parameter": "mandatory",
+     "@sap.label": "Date",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "P_CapEvalBucketType": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.parameter": "mandatory",
+     "@sap.label": "Single-Character Flag",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Set": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapOrderPerBucketSet",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPerBucketSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Capacity Evaluation",
+   "elements": {
+    "P_CapEvalStartDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Date",
+     "notNull": true
+    },
+    "P_CapEvalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Date",
+     "notNull": true
+    },
+    "P_CapEvalBucketType": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Single-Character Flag",
+     "notNull": true
+    },
+    "Plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant",
+     "notNull": true
+    },
+    "WorkCenter": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "ShiftName": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Shift Definition",
+     "notNull": true
+    },
+    "CapacityEvaluationTimePeriod": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "CapEvalBucketType": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "notNull": true
+    },
+    "CapacityEvaluationTimePerdText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "WorkCenterInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource"
+    },
+    "WorkCenterResponsible": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Responsible",
+     "@sap.quickinfo": "Person Responsible for the Work Center"
+    },
+    "CapacityStartTime": {
+     "type": "cds.Integer",
+     "@sap.label": "Start Time",
+     "@sap.quickinfo": "Start time in seconds (internal)"
+    },
+    "CapacityEndTime": {
+     "type": "cds.Integer",
+     "@sap.label": "End Time",
+     "@sap.quickinfo": "End Time in Seconds (internal)"
+    },
+    "WorkCenterAvailableCapacity": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "WorkCenterCapacityUnit"
+    },
+    "WorkCenterCapRqmtInCapUnit": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "WorkCenterCapacityUnit"
+    },
+    "WrkCtrRmngCapInCapUnit": {
+     "type": "cds.Decimal",
+     "precision": 11,
+     "scale": 2,
+     "@sap.unit": "WorkCenterCapacityUnit"
+    },
+    "WorkCenterTotUtilznInTmePerd": {
+     "type": "cds.Double"
+    },
+    "WorkCenterCapacityUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterCapUnitText": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.label": "Measuremt unit text",
+     "@sap.quickinfo": "Unit of Measurement Text (Maximum 10 Characters)"
+    },
+    "WorkCenterTypeCode": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource"
+    },
+    "CapacityCategoryAllocation": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Allocation",
+     "@sap.quickinfo": "Capacity Category Allocation"
+    },
+    "Parameters": {
+     "@sap.filterable": "false",
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPerBucket",
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPerBucket": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "parameters",
+   "elements": {
+    "P_CapEvalStartDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.parameter": "mandatory",
+     "@sap.label": "Date",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "P_CapEvalEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.parameter": "mandatory",
+     "@sap.label": "Date",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "P_CapEvalBucketType": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.parameter": "mandatory",
+     "@sap.label": "Single-Character Flag",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Set": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPerBucketSet",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCapPplineOp": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Queued Operations Capacity",
+   "elements": {
+    "Plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant",
+     "notNull": true
+    },
+    "MRPController": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MRP controller",
+     "@sap.quickinfo": "MRP controller for the order",
+     "notNull": true
+    },
+    "WorkCenter": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center",
+     "notNull": true
+    },
+    "CapacityInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID",
+     "notNull": true
+    },
+    "CapacityRequirement": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity Requirement",
+     "@sap.quickinfo": "ID of the Capacity Requirements Record",
+     "notNull": true
+    },
+    "Material": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number for Order",
+     "notNull": true
+    },
+    "OrderID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "notNull": true
+    },
+    "Operation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Activity",
+     "@sap.quickinfo": "Operation/Activity Number",
+     "notNull": true
+    },
+    "WorkCenterDesc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Work Center Text"
+    },
+    "WorkCenterResponsible": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Responsible",
+     "@sap.quickinfo": "Person Responsible for the Work Center"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenterInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource"
+    },
+    "CapacityRequirementOrigin": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Capacity Requirement Origin"
+    },
+    "CapacityRequirementUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Capacity Unit",
+     "@sap.quickinfo": "Unit of Measure for Capacity Requirements",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "OrderType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Order Type"
+    },
+    "OrderTypeName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Type Name",
+     "@sap.quickinfo": "Planned Order Type Name"
+    },
+    "OrderCategory": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Order Category"
+    },
+    "OrderCategoryName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Category Name",
+     "@sap.quickinfo": "Planned Order Category Name"
+    },
+    "BaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "OrderPlannedTotalQty": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "BaseUnit",
+     "@sap.label": "Total Order Quantity"
+    },
+    "ProductionVersion": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Production Version"
+    },
+    "OperationPlanningStatusCode": {
+     "type": "cds.String",
+     "length": 4
+    },
+    "OperationPlanningStatusText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "OperationLatestStartDate": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OperationLatestStartTime": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OperationLatestEndDate": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OperationLatestEndTime": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OrderStatusCode": {
+     "type": "cds.String",
+     "length": 5
+    },
+    "OrderStatusText": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Status",
+     "@sap.quickinfo": "Individual Status of an Object"
+    },
+    "OrderStatusShortText": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.label": "Status",
+     "@sap.quickinfo": "Individual status of an object (short form)"
+    },
+    "OrderFirmingStatusCode": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Single-Character Flag",
+     "@sap.heading": ""
+    },
+    "OrderFirmingStatusText": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Short Descript.",
+     "@sap.quickinfo": "Short Text for Fixed Values"
+    },
+    "OpLtstSchedldProcgStrtDte": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OpLtstSchedldProcgStrtTme": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "OpLtstSchedldTrdwnStrtDte": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "char8",
+     "@sap.quickinfo": "Character field, 8 characters long"
+    },
+    "OpLtstSchedldTrdwnStrtTme": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reserve",
+     "@sap.quickinfo": "Character field of length 6"
+    },
+    "RemainingCapReqOpSegSetupDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "RemainingCapReqOpSegProcgDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "RemainingCapReqOpSegTrdwnDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "CapacityRequirementsAreDtmnd": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2
+    },
+    "RemainingCapReqExecutionDurn": {
+     "type": "cds.Decimal",
+     "precision": 10,
+     "scale": 2,
+     "@sap.unit": "CapacityRequirementUnit"
+    },
+    "OrderInternalID": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Internal ID"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterCostCenter": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Cost Center Allocation",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Object Type",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "CostCenterAllocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Cost Center Allocation",
+     "notNull": true
+    },
+    "ValidityEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "End Date",
+     "notNull": true
+    },
+    "ValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Start date",
+     "@sap.quickinfo": "Start Date"
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "ControllingArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Controlling Area"
+    },
+    "CostCenter": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Cost Center"
+    },
+    "CostCtrActivityType": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Activity Type"
+    },
+    "CostCtrActivityTypeQtyUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Activity Unit",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "BusinessProcess": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Process"
+    },
+    "ActivityDescOriginType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Activity Description Origin Type"
+    },
+    "CostCenterActivityAltvDescID": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Alternative Activity Description ID",
+     "@sap.quickinfo": "ID for Alternative Activity Description"
+    },
+    "CostCenterActivityTypeFormula": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula key costing",
+     "@sap.quickinfo": "Formula key for costing"
+    },
+    "CostCtrActyTypeIsReferenced": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference indicator",
+     "@sap.quickinfo": "Field is referenced"
+    },
+    "CostCtrActyTypeIncntvWageCode": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Incentive wages ind.",
+     "@sap.quickinfo": "Transfer activity types to incentive wages"
+    },
+    "CostCtrActyTypeRecdTypeGrpCode": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Rec. type group",
+     "@sap.quickinfo": "Record type group"
+    },
+    "WorkCenterLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Date and Time of Last Change"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterDayOperation": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Daily Operations",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Work Center Internal",
+     "@sap.quickinfo": "Work Center Internal ID",
+     "notNull": true
+    },
+    "ManufacturingOrder": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Production Order",
+     "@sap.quickinfo": "Manufacturing Order ID",
+     "notNull": true
+    },
+    "ManufacturingOrderOperation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Operation",
+     "@sap.quickinfo": "Manufacturing Order Operation",
+     "notNull": true
+    },
+    "ManufacturingOrderCategory": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Category",
+     "@sap.quickinfo": "Manufacturing Order Category",
+     "notNull": true
+    },
+    "MfgOrderOperationText": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Operation Text",
+     "@sap.quickinfo": "Manufacturing Order Operation Text"
+    },
+    "Material": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number for Order"
+    },
+    "OperationIsReleased": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Operation Is Released",
+     "@sap.quickinfo": "Boolean Variable (X = True, - = False, Space = Unknown)"
+    },
+    "OpErlstSchedldExecStrtDte": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Planned Start Date",
+     "@sap.quickinfo": "Earliest Scheduled Execution Start Date"
+    },
+    "OpErlstSchedldExecStrtTme": {
+     "type": "cds.Time",
+     "@sap.label": "Planned Start Time",
+     "@sap.quickinfo": "Earliest Scheduled Execution Start Time"
+    },
+    "OpErlstSchedldExecEndDte": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Planned End Date",
+     "@sap.quickinfo": "Earliest Scheduled Execution End Date"
+    },
+    "OpErlstSchedldExecEndTme": {
+     "type": "cds.Time",
+     "@sap.label": "Planned End Time",
+     "@sap.quickinfo": "Earliest Scheduled Execution End Time"
+    },
+    "OpPlannedTotalQuantity": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "OperationUnit",
+     "@sap.label": "Operation Quantity",
+     "@sap.quickinfo": "Operation Total Quantity"
+    },
+    "OperationUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Operation Unit",
+     "@sap.quickinfo": "Operation Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ConfirmedQuantity": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "ConfirmedQuantityUnit"
+    },
+    "ConfirmedQuantityInBaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.unit": "ConfirmedQuantityUnit",
+     "@sap.label": "Production Unit",
+     "@sap.quickinfo": "Production Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ConfirmedQuantityUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Production Unit",
+     "@sap.quickinfo": "Production Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ErlstSchedldExecDurnInWorkdays": {
+     "type": "cds.Integer",
+     "@sap.label": "Planned Duration",
+     "@sap.quickinfo": "Earliest Scheduled Execution Duration in Workdays"
+    },
+    "OpActualExecutionDays": {
+     "type": "cds.Integer",
+     "@sap.label": "Actual Duration",
+     "@sap.quickinfo": "Actual Execution Duration in Workdays"
+    },
+    "ManufacturingOrderSequence": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Sequence",
+     "@sap.quickinfo": "Manufacturing Order Sequence"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterDescription": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Description",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Object ID",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Resource Type",
+     "@sap.quickinfo": "Production Resource Type",
+     "notNull": true
+    },
+    "Language": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.label": "Language Key",
+     "notNull": true
+    },
+    "WorkCenterDesc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Work Center Text"
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenterLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Date and Time of Last Change"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenterPipeLineOperation": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Queued Operations",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Work Center Internal",
+     "@sap.quickinfo": "Work Center Internal ID",
+     "notNull": true
+    },
+    "ManufacturingOrder": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Production Order",
+     "@sap.quickinfo": "Manufacturing Order ID",
+     "notNull": true
+    },
+    "ManufacturingOrderOperation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MfgOrderOperationText",
+     "@sap.label": "Operation",
+     "@sap.quickinfo": "Manufacturing Order Operation",
+     "notNull": true
+    },
+    "ManufacturingOrderCategory": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Category",
+     "@sap.quickinfo": "Manufacturing Order Category",
+     "notNull": true
+    },
+    "MfgOrderOperationText": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Operation Text",
+     "@sap.quickinfo": "Manufacturing Order Operation Text"
+    },
+    "Material": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number for Order"
+    },
+    "OperationIsReleased": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Operation Is Released",
+     "@sap.quickinfo": "Boolean Variable (X = True, - = False, Space = Unknown)"
+    },
+    "OpErlstSchedldExecStrtDte": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Planned Start Date",
+     "@sap.quickinfo": "Earliest Scheduled Execution Start Date"
+    },
+    "OpErlstSchedldExecStrtTme": {
+     "type": "cds.Time",
+     "@sap.label": "Planned Start Time",
+     "@sap.quickinfo": "Earliest Scheduled Execution Start Time"
+    },
+    "OpErlstSchedldExecEndDte": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Planned End Date",
+     "@sap.quickinfo": "Earliest Scheduled Execution End Date"
+    },
+    "OpErlstSchedldExecEndTme": {
+     "type": "cds.Time",
+     "@sap.label": "Planned End Time",
+     "@sap.quickinfo": "Earliest Scheduled Execution End Time"
+    },
+    "OpPlannedTotalQuantity": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "OperationUnit",
+     "@sap.label": "Total Queue Quantity",
+     "@sap.quickinfo": "Operation Total Quantity"
+    },
+    "OperationUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Operation Unit",
+     "@sap.quickinfo": "Operation Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ConfirmedQuantity": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "ConfirmedQuantityUnit",
+     "@sap.label": "Confirmed Quantity"
+    },
+    "ConfirmedQuantityInBaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.unit": "ConfirmedQuantityUnit",
+     "@sap.label": "Production Unit",
+     "@sap.quickinfo": "Production Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ConfirmedQuantityUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Production Unit",
+     "@sap.quickinfo": "Production Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "ErlstSchedldExecDurnInWorkdays": {
+     "type": "cds.Integer",
+     "@sap.label": "Planned Duration",
+     "@sap.quickinfo": "Earliest Scheduled Execution Duration in Workdays"
+    },
+    "RemainingDuration": {
+     "type": "cds.Integer",
+     "@sap.label": "Remaining Duration"
+    },
+    "ManufacturingOrderSequence": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Sequence",
+     "@sap.quickinfo": "Manufacturing Order Sequence"
+    }
+   }
+  },
+  "OP_API_WORK_CENTERS_0001.A_WorkCenters": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Header",
+   "elements": {
+    "WorkCenterInternalID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Work Center Internal Id",
+     "@sap.quickinfo": "Object ID of the resource",
+     "notNull": true
+    },
+    "WorkCenterTypeCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Type Code",
+     "@sap.quickinfo": "Object types of the CIM resource",
+     "notNull": true
+    },
+    "WorkCenter": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center"
+    },
+    "WorkCenterDesc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Work Center Text"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "WorkCenterCategoryCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Category"
+    },
+    "WorkCenterResponsible": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Responsible",
+     "@sap.quickinfo": "Person Responsible for the Work Center"
+    },
+    "WorkCenterResponsibleName": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Name of Responsible",
+     "@sap.quickinfo": "Work Center Responsible Name"
+    },
+    "SupplyArea": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Prodn Supply Area",
+     "@sap.quickinfo": "Production Supply Area"
+    },
+    "WorkCenterUsage": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Work Center Usage",
+     "@sap.quickinfo": "Work Center Usage in Bill of Operations"
+    },
+    "CapacityInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Capacity ID"
+    },
+    "WorkCenterIsToBeDeleted": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Deletion Flag",
+     "@sap.quickinfo": "Deletion flag for work center"
+    },
+    "ValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Valid-From Date"
+    },
+    "ValidityEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Valid-To Date"
+    },
+    "WorkCenterFormulaParam1": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula Parameter 1",
+     "@sap.quickinfo": "Work Center Formula Parameter 1"
+    },
+    "WorkCenterFormulaParam2": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula Parameter 2",
+     "@sap.quickinfo": "Work Center Formula Parameter 2"
+    },
+    "WorkCenterFormulaParam3": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula Parameter 3",
+     "@sap.quickinfo": "Work Center Formula Parameter 3"
+    },
+    "WorkCenterFormulaParam4": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula Parameter 4",
+     "@sap.quickinfo": "Work Center Formula Parameter 4"
+    },
+    "WorkCenterFormulaParam5": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula Parameter 5",
+     "@sap.quickinfo": "Work Center Formula Parameter 5"
+    },
+    "WorkCenterFormulaParam6": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Formula Parameter 6",
+     "@sap.quickinfo": "Work Center Formula Parameter 6"
+    },
+    "WorkCenterFmlaParamValue1": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 3,
+     "@sap.unit": "WorkCenterFmlaParamUnit1",
+     "@sap.label": "Formula Parameter Value 1",
+     "@sap.quickinfo": "Work Center Formula Parameter Value 1"
+    },
+    "WorkCenterFmlaParamValue2": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 3,
+     "@sap.unit": "WorkCenterFmlaParamUnit2",
+     "@sap.label": "Formula Parameter Value 2",
+     "@sap.quickinfo": "Work Center Formula Parameter Value 2"
+    },
+    "WorkCenterFmlaParamValue3": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 3,
+     "@sap.unit": "WorkCenterFmlaParamUnit3",
+     "@sap.label": "Formula Parameter Value 3",
+     "@sap.quickinfo": "Work Center Formula Parameter Value 3"
+    },
+    "WorkCenterFmlaParamValue4": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 3,
+     "@sap.unit": "WorkCenterFmlaParamUnit4",
+     "@sap.label": "Formula Parameter Value 4",
+     "@sap.quickinfo": "Work Center Formula Parameter Value 4"
+    },
+    "WorkCenterFmlaParamValue5": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 3,
+     "@sap.unit": "WorkCenterFmlaParamUnit5",
+     "@sap.label": "Formula Parameter Value 5",
+     "@sap.quickinfo": "Work Center Formula Parameter Value 5"
+    },
+    "WorkCenterFmlaParamValue6": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 3,
+     "@sap.unit": "WorkCenterFmlaParamUnit6",
+     "@sap.label": "Formula Parameter Value 6",
+     "@sap.quickinfo": "Work Center Formula Parameter Value 6"
+    },
+    "WorkCenterFmlaParamUnit1": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Formula Parameter Unit 1",
+     "@sap.quickinfo": "Work Center Formula Parameter Unit 1",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterFmlaParamUnit2": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Formula Parameter Unit 2",
+     "@sap.quickinfo": "Work Center Formula Parameter Unit 2",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterFmlaParamUnit3": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Formula Parameter Unit 3",
+     "@sap.quickinfo": "Work Center Formula Parameter Unit 3",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterFmlaParamUnit4": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Formula Parameter Unit 4",
+     "@sap.quickinfo": "Work Center Formula Parameter Unit 4",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterFmlaParamUnit5": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Formula Parameter Unit 5",
+     "@sap.quickinfo": "Work Center Formula Parameter Unit 5",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterFmlaParamUnit6": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Formula Parameter Unit 6",
+     "@sap.quickinfo": "Work Center Formula Parameter Unit 6",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "StandardWorkFormulaParamGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Key"
+    },
+    "WrkCtrStdValMaintRule1": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Maintenance Rule 1"
+    },
+    "WrkCtrStdValMaintRule2": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Maintenance Rule 2"
+    },
+    "WrkCtrStdValMaintRule3": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Maintenance Rule 3"
+    },
+    "WrkCtrStdValMaintRule4": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Maintenance Rule 4"
+    },
+    "WrkCtrStdValMaintRule5": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Maintenance Rule 5"
+    },
+    "WrkCtrStdValMaintRule6": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Standard Value Maintenance Rule 6"
+    },
+    "WorkCenterStandardWorkQtyUnit1": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Work Quantity Unit 1",
+     "@sap.quickinfo": "Standard Work Quantity Unit 1",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterStandardWorkQtyUnit2": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Work Quantity Unit 2",
+     "@sap.quickinfo": "Standard Work Quantity Unit 2",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterStandardWorkQtyUnit3": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Work Quantity Unit 3",
+     "@sap.quickinfo": "Standard Work Quantity Unit 3",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterStandardWorkQtyUnit4": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Work Quantity Unit 4",
+     "@sap.quickinfo": "Standard Work Quantity Unit 4",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterStandardWorkQtyUnit5": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Work Quantity Unit 5",
+     "@sap.quickinfo": "Standard Work Quantity Unit 5",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "WorkCenterStandardWorkQtyUnit6": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Work Quantity Unit 6",
+     "@sap.quickinfo": "Standard Work Quantity Unit 6",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "OperationControlProfile": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Control Profile",
+     "@sap.quickinfo": "Operation Control Profile"
+    },
+    "MatlCompIsMarkedForBackflush": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Backflush",
+     "@sap.quickinfo": "Indicator: Backflushing"
+    },
+    "WorkCenterLocation": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Location",
+     "@sap.quickinfo": "Work center location"
+    },
+    "WorkCenterLocationGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Location Group"
+    },
+    "WrkCtrSetupSchedgFmla": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Duration of Setup",
+     "@sap.quickinfo": "Formula for setup time"
+    },
+    "WrkCtrProcgSchedgFmla": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Processing Duration",
+     "@sap.quickinfo": "Formula for the duration of processing time"
+    },
+    "WrkCtrTeardownSchedgFmla": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Duration of Teardown",
+     "@sap.quickinfo": "Formula for teardown time"
+    },
+    "WrkCtrIntProcgSchedgFmla": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal Processing Duration",
+     "@sap.quickinfo": "Formula for the Internal Processing Duration"
+    },
+    "WorkCenterLastChangeDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Date and Time of Last Change"
+    },
+    "to_Capacity": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCapacity",
+     "keys": []
+    },
+    "to_WorkCenterAllCapacity": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterAllCapacity_2",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterCapacity": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterAllCapacity",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterCostCenter": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterCostCenter",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterDescription": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterDescription",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterQueuingOp": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterPipeLineOperation",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_WorkCenterTodayOp": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "OP_API_WORK_CENTERS_0001.A_WorkCenterDayOperation",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    }
+   }
+  }
+ }
+}
